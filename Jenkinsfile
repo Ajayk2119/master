@@ -5,7 +5,7 @@ pipeline {
      
 	    stage ('Docker Image') {
          steps {
-	     sh " docker stop $BUILD_ID-server, docker rm $BUILD_ID-server, echo  "
+	     sh 'sh /root/docker.sh'
              sh "docker build -t webimage:$BUILD_ID ."
          }
      }
