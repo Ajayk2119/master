@@ -10,7 +10,7 @@ pipeline {
      }
 	  stage ('Docker Deploy') {
          steps {
-	     sh ' /root/docker.sh '
+	     sh " docker stop $BUILD_ID-server, docker rm $BUILD_ID-server "
              sh "docker run -d --name $BUILD_ID-server -p 80:80 webimage:$BUILD_ID"
          }
      }
