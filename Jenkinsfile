@@ -10,7 +10,7 @@ pipeline {
      }
 	  stage ('Docker Deploy') {
          steps {
-             sh "docker run -d --name $BUILD_ID-server -p 80:80 $JOB_NAME:$BUILD_ID"
+             sh "docker run -d --name $BUILD_ID-server -p 80:80 server:$BUILD_ID"
          }
      }
  }
